@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 
-app.post("https://fbackend-3.onrender.com/register", async (req, res) => {
+app.post(/register, async (req, res) => {
   try {
     const user = new User(req.body);
     await user.save();
@@ -36,7 +36,7 @@ app.post("https://fbackend-3.onrender.com/register", async (req, res) => {
 });
 
 
-app.post("https://fbackend-3.onrender.com/register", async (req, res) => {
+app.post(/login, async (req, res) => {
   try {
     const users = await User.find();
     const { descriptor } = req.body;
